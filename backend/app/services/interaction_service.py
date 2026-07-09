@@ -83,3 +83,19 @@ class InteractionService:
         db.commit()
 
         return True
+
+    @staticmethod
+    def search_by_hcp_name(
+        db: Session,
+        hcp_name: str,
+    ) -> list[Interaction]:
+        """
+        Search interactions by HCP name.
+        """
+
+    return (
+        db.query(Interaction)
+        .filter(Interaction.hcp_name.ilike(f"%{hcp_name}%"))
+        .order_by(Interaction.interaction_date.desc())
+        .all()
+    )
