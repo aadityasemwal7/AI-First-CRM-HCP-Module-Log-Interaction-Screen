@@ -1,14 +1,17 @@
+from langchain_core.messages import SystemMessage
 from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
 from langgraph.prebuilt import tools_condition
 
 from app.ai.llm import llm_with_tools
 from app.ai.nodes import tool_node
+from app.ai.prompts import SYSTEM_PROMPT
 from app.ai.state import CRMState
 
 
 def chatbot(state: CRMState):
-    return {"messages": [llm_with_tools.invoke(state["messages"])]}
+    messages = [SystemMessage(content=SYSTEM_PROMPT)] + state["messages"]
+    return {"messages": [llm_with_tools.invoke(messages)]}
 
 
 graph_builder = StateGraph(CRMState)
