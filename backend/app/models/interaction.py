@@ -1,5 +1,5 @@
 from datetime import datetime
-from enum import Enum
+from app.common.enums import InteractionType
 
 from sqlalchemy import DateTime, Enum as SQLEnum, Integer, String, Text, func
 from sqlalchemy.orm import Mapped, mapped_column
