@@ -1,11 +1,8 @@
-/*
-  interactionSlice.js
-  -------------------
-  Redux slice for HCP interaction state.
-  Connects to FastAPI backend via Axios.
-  Supports fetching, logging, updating, and optimistic deleting.
-*/
-
+/**
+ * Redux slice for HCP interaction state.
+ * Connects to FastAPI backend via Axios.
+ * Supports fetching, logging, updating, and optimistic deleting.
+ */
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { interactionService } from "../services/api";
 

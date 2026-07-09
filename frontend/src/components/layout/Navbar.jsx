@@ -1,10 +1,9 @@
-/*
-  Navbar.jsx
-  ----------
-  Top navigation bar with app branding, search placeholder,
-  and user avatar area. Fixed at the top of the viewport.
-*/
-
+/**
+ * Top navigation bar with app branding, search placeholder,
+ * and user avatar area. Fixed at the top of the viewport.
+ *
+ * @returns {JSX.Element} The rendered component.
+ */
 const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-200">

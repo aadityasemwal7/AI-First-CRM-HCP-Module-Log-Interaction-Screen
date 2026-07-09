@@ -1,3 +1,7 @@
+"""
+This module defines the database models for the application.
+It contains the SQLAlchemy ORM definitions for the interactions table.
+"""
 from datetime import datetime
 from app.common.enums import InteractionType
 
@@ -7,8 +11,23 @@ from sqlalchemy.orm import Mapped, mapped_column
 from app.database.database import Base
 
 
-
 class Interaction(Base):
+    """
+    SQLAlchemy model representing an HCP interaction record.
+    
+    Attributes:
+        id (int): Primary key.
+        hcp_name (str): Name of the Healthcare Professional.
+        hcp_specialty (str): Specialty of the HCP.
+        interaction_type (InteractionType): The method/type of interaction.
+        interaction_date (datetime): When the interaction occurred.
+        discussion_notes (str): Detailed notes from the interaction.
+        ai_summary (str | None): Auto-generated summary of the notes.
+        next_action (str): The planned next steps.
+        follow_up_date (datetime | None): When to follow up, if applicable.
+        created_at (datetime): Record creation timestamp.
+        updated_at (datetime): Record last update timestamp.
+    """
     __tablename__ = "interactions"
 
     id: Mapped[int] = mapped_column(

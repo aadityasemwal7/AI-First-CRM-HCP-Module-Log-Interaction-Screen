@@ -1,3 +1,7 @@
+"""
+This module defines the Pydantic schemas used for data validation and serialization.
+These schemas are used extensively in the API routing layer.
+"""
 from datetime import datetime
 
 from pydantic import BaseModel, ConfigDict
@@ -6,6 +10,9 @@ from app.models.interaction import InteractionType
 
 
 class InteractionBase(BaseModel):
+    """
+    Base schema for an interaction containing common fields.
+    """
     hcp_name: str
     hcp_specialty: str
     interaction_type: InteractionType
@@ -16,10 +23,16 @@ class InteractionBase(BaseModel):
 
 
 class InteractionCreate(InteractionBase):
+    """
+    Schema for creating a new interaction. Inherits all fields from InteractionBase.
+    """
     pass
 
 
 class InteractionUpdate(BaseModel):
+    """
+    Schema for updating an existing interaction. All fields are optional.
+    """
     hcp_name: str | None = None
     hcp_specialty: str | None = None
     interaction_type: InteractionType | None = None
@@ -31,6 +44,10 @@ class InteractionUpdate(BaseModel):
 
 
 class InteractionResponse(InteractionBase):
+    """
+    Schema for returning an interaction record in API responses.
+    Includes database-assigned fields like id and timestamps.
+    """
     id: int
     ai_summary: str | None
     created_at: datetime

@@ -1,9 +1,10 @@
-/*
-  Input.jsx
-  ---------
-  Reusable text input component.
-  Accepts label, placeholder, and standard input props.
-*/
+/**
+ * Reusable text input component.
+ * Accepts label, placeholder, and standard input props.
+ *
+ * @param {Object} props - Component props, including standard input attributes.
+ * @returns {JSX.Element} The rendered component.
+ */
 
 const Input = (props) => {
   return (

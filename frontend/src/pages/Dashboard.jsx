@@ -1,19 +1,12 @@
-/*
-  Dashboard.jsx
-  -------------
-  Main application page.
-  Layout:
-    ┌──────────────────────────────────┐
-    │            Navbar                │
-    ├─────────────────┬────────────────┤
-    │  InteractionForm│  ChatWindow    │
-    │  (Left Panel)   │  (Right Panel) │
-    ├─────────────────┴────────────────┤
-    │       InteractionTable           │
-    │       (Bottom Section)           │
-    └──────────────────────────────────┘
-*/
-
+/**
+ * Main application page.
+ * Layout:
+ *   - Top: Navbar
+ *   - Middle: InteractionForm (Left) | ChatWindow (Right)
+ *   - Bottom: InteractionTable
+ *
+ * @returns {JSX.Element} The rendered component.
+ */
 import Navbar from "../components/layout/Navbar";
 import InteractionForm from "../components/interaction/InteractionForm";
 import ChatWindow from "../components/chat/ChatWindow";

@@ -1,10 +1,7 @@
-/*
-  store.js
-  --------
-  Configures the Redux Toolkit store.
-  Registers the interaction and chat feature slices.
-*/
-
+/**
+ * Configures the Redux Toolkit store.
+ * Registers the interaction and chat feature slices.
+ */
 import { configureStore } from "@reduxjs/toolkit";
 import interactionReducer from "./interactionSlice";
 import chatReducer from "./chatSlice";

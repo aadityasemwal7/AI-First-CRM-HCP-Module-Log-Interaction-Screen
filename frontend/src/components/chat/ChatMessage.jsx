@@ -1,11 +1,14 @@
-/*
-  ChatMessage.jsx
-  ---------------
-  Renders a single chat bubble.
-  Props: role ("user" | "assistant"), content, timestamp
-  User messages align right (indigo), assistant messages align left (gray).
-*/
-
+/**
+ * Renders a single chat bubble.
+ * User messages align right (indigo), assistant messages align left (gray).
+ *
+ * @param {Object} props - Component props.
+ * @param {"user" | "assistant"} props.role - The role of the message sender.
+ * @param {string} props.content - The text content of the message.
+ * @param {string | number} [props.timestamp] - Optional timestamp of the message.
+ * @param {string} [props.progress] - Optional progress text for AI generation.
+ * @returns {JSX.Element} The rendered component.
+ */
 const ChatMessage = ({ role, content, timestamp, progress }) => {
   const isUser = role === "user";
 

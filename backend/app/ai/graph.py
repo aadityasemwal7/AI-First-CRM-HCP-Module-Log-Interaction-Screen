@@ -1,3 +1,8 @@
+"""
+This module defines the state graph for the AI chatbot.
+It sets up the nodes, edges, and conditions to manage the flow of the conversation
+between the user, the language model, and the available tools.
+"""
 from langchain_core.messages import SystemMessage
 from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
@@ -10,6 +15,15 @@ from app.ai.state import CRMState
 
 
 def chatbot(state: CRMState):
+    """
+    Processes the current state and invokes the language model.
+    
+    Args:
+        state (CRMState): The current state of the conversation, including messages.
+        
+    Returns:
+        dict: A dictionary containing the newly generated messages from the LLM.
+    """
     messages = [SystemMessage(content=SYSTEM_PROMPT)] + state["messages"]
     return {"messages": [llm_with_tools.invoke(messages)]}
 

@@ -1,13 +1,14 @@
-/*
-  ChatInput.jsx
-  -------------
-  Chat input bar with text field and send button.
-  Props: onSend (callback), disabled (boolean)
-  Supports Enter key to send and Shift+Enter for newline.
-*/
-
 import { useState } from "react";
 
+/**
+ * Chat input bar with text field and send button.
+ * Supports Enter key to send and Shift+Enter for newline.
+ *
+ * @param {Object} props - Component props.
+ * @param {Function} props.onSend - Callback when a message is sent.
+ * @param {boolean} props.disabled - Whether the input is disabled.
+ * @returns {JSX.Element} The rendered component.
+ */
 const ChatInput = ({ onSend, disabled }) => {
   const [input, setInput] = useState("");
 

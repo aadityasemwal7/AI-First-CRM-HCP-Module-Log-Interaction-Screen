@@ -1,3 +1,7 @@
+"""
+This module defines the API routes for managing HCP interactions.
+It handles incoming HTTP requests and routes them to the appropriate service methods.
+"""
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
@@ -24,6 +28,16 @@ def create_interaction(
     interaction: InteractionCreate,
     db: Session = Depends(get_db),
 ):
+    """
+    Create a new interaction record.
+    
+    Args:
+        interaction (InteractionCreate): The interaction data to create.
+        db (Session): The database session.
+        
+    Returns:
+        InteractionResponse: The created interaction record.
+    """
     return InteractionService.create(db, interaction)
 
 
@@ -34,6 +48,15 @@ def create_interaction(
 def get_interactions(
     db: Session = Depends(get_db),
 ):
+    """
+    Retrieve all interaction records.
+    
+    Args:
+        db (Session): The database session.
+        
+    Returns:
+        list[InteractionResponse]: A list of all interaction records.
+    """
     return InteractionService.get_all(db)
 
 
@@ -45,6 +68,19 @@ def get_interaction(
     interaction_id: int,
     db: Session = Depends(get_db),
 ):
+    """
+    Retrieve a specific interaction record by its ID.
+    
+    Args:
+        interaction_id (int): The ID of the interaction to retrieve.
+        db (Session): The database session.
+        
+    Returns:
+        InteractionResponse: The requested interaction record.
+        
+    Raises:
+        HTTPException: If the interaction is not found (404).
+    """
     interaction = InteractionService.get(db, interaction_id)
 
     if interaction is None:
@@ -65,6 +101,20 @@ def update_interaction(
     interaction: InteractionUpdate,
     db: Session = Depends(get_db),
 ):
+    """
+    Update an existing interaction record.
+    
+    Args:
+        interaction_id (int): The ID of the interaction to update.
+        interaction (InteractionUpdate): The updated interaction data.
+        db (Session): The database session.
+        
+    Returns:
+        InteractionResponse: The updated interaction record.
+        
+    Raises:
+        HTTPException: If the interaction is not found (404).
+    """
     updated = InteractionService.update(
         db,
         interaction_id,
@@ -85,6 +135,19 @@ def delete_interaction(
     interaction_id: int,
     db: Session = Depends(get_db),
 ):
+    """
+    Delete an interaction record by its ID.
+    
+    Args:
+        interaction_id (int): The ID of the interaction to delete.
+        db (Session): The database session.
+        
+    Returns:
+        dict: A success message.
+        
+    Raises:
+        HTTPException: If the interaction is not found (404).
+    """
     deleted = InteractionService.delete(
         db,
         interaction_id,

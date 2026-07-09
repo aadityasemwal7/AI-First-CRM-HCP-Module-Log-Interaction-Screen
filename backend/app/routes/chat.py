@@ -1,3 +1,7 @@
+"""
+This module defines the API routes for the AI Chat functionality.
+It handles streaming responses from the LangGraph AI model.
+"""
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 import traceback
@@ -15,6 +19,15 @@ router = APIRouter(
 
 @router.post("/")
 async def chat(message: str):
+    """
+    Initiates a chat session with the AI assistant and streams the response.
+    
+    Args:
+        message (str): The user's input message.
+        
+    Returns:
+        StreamingResponse: An SSE (Server-Sent Events) stream yielding token and progress updates.
+    """
     async def event_generator():
         try:
             async for event in graph.astream_events({"messages": [HumanMessage(content=message)]}, version="v2"):

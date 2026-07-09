@@ -1,11 +1,15 @@
-/*
-  InteractionTableRow.jsx
-  -----------------------
-  Reusable table row for displaying a single HCP interaction.
-  Includes Edit and Delete action buttons.
-  Maps from FastAPI response schema (hcp_name, hcp_specialty, etc.)
-*/
-
+/**
+ * Reusable table row for displaying a single HCP interaction.
+ * Includes Edit and Delete action buttons.
+ * Maps from FastAPI response schema (hcp_name, hcp_specialty, etc.)
+ *
+ * @param {Object} props - Component props.
+ * @param {Object} props.row - The interaction data object.
+ * @param {Function} props.onEdit - Callback when edit is clicked.
+ * @param {Function} props.onDelete - Callback when delete is clicked.
+ * @param {boolean} props.isEditing - Whether this row is currently being edited.
+ * @returns {JSX.Element} The rendered component.
+ */
 const InteractionTableRow = ({ row, onEdit, onDelete, isEditing }) => {
   // Format ISO date to YYYY-MM-DD
   const formattedDate = row.interaction_date 

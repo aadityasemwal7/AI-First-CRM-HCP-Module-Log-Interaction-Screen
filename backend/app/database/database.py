@@ -1,9 +1,15 @@
+"""
+This module initializes the SQLAlchemy database connection, engine, and session factory.
+"""
 from sqlalchemy import create_engine
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
 from app.core.config import settings
 
 
 class Base(DeclarativeBase):
+    """
+    Base class for all SQLAlchemy declarative models.
+    """
     pass
 
 

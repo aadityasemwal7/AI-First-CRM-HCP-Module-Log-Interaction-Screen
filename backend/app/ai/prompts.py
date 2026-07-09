@@ -1,3 +1,7 @@
+"""
+This module stores the system prompts used by the language model.
+These prompts instruct the AI on its persona, responsibilities, and how to use available tools.
+"""
 SYSTEM_PROMPT = """
 You are an AI assistant for a Healthcare CRM (Customer Relationship Management) system.
 

@@ -1,10 +1,7 @@
-/*
-  chatSlice.js
-  ------------
-  Redux slice for AI chat state.
-  Connects to FastAPI backend via Axios chatService.
-*/
-
+/**
+ * Redux slice for AI chat state.
+ * Connects to FastAPI backend via Axios chatService.
+ */
 import { createSlice, createAsyncThunk, nanoid } from "@reduxjs/toolkit";
 import { chatService } from "../services/api";
 

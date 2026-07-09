@@ -1,20 +1,13 @@
-/*
-  ChatWindow.jsx
-  --------------
-  Main AI chat panel.
-  - Reads messages and loading state from Redux
-  - Dispatches sendMessage thunk on user input
-  - Auto-scrolls to the latest message
-  - Shows typing indicator while loading
-  - Includes a clear chat button in the header
-*/
-
 import { useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { sendMessage, clearChat } from "../../redux/chatSlice";
 import ChatMessage from "./ChatMessage";
 import ChatInput from "./ChatInput";
 
+/**
+ * Renders a visual typing indicator for the AI assistant.
+ * @returns {JSX.Element} The rendered component.
+ */
 const TypingIndicator = () => (
   <div className="flex justify-start">
     <div className="flex items-start gap-2.5">
@@ -32,6 +25,16 @@ const TypingIndicator = () => (
   </div>
 );
 
+/**
+ * Main AI chat panel.
+ * - Reads messages and loading state from Redux
+ * - Dispatches sendMessage thunk on user input
+ * - Auto-scrolls to the latest message
+ * - Shows typing indicator while loading
+ * - Includes a clear chat button in the header
+ *
+ * @returns {JSX.Element} The rendered component.
+ */
 const ChatWindow = () => {
   const dispatch = useDispatch();
   const { messages, loading, error } = useSelector((state) => state.chat);

@@ -1,3 +1,7 @@
+"""
+This module configures the large language model (LLM) instance used by the chatbot.
+It initializes the LLM with appropriate settings and binds the required tools.
+"""
 from langchain_groq import ChatGroq
 
 from app.ai.tools import (

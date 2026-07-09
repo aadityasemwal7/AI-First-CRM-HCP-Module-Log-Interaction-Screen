@@ -1,3 +1,7 @@
+"""
+This module defines the tool node for the LangGraph workflow.
+It aggregates all available tools into a single node that can be executed by the graph.
+"""
 from langgraph.prebuilt import ToolNode
 
 from app.ai.tools import (

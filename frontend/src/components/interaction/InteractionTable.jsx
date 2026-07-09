@@ -1,15 +1,15 @@
-/*
-  InteractionTable.jsx
-  --------------------
-  Recent interactions table connected to Redux and FastAPI.
-  Fetches interactions on mount and renders them.
-  Handles edit selection and optimistic deletion.
-*/
-
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchInteractions, deleteInteraction, setSelectedInteraction } from "../../redux/interactionSlice";
 import InteractionTableRow from "./InteractionTableRow";
+
+/**
+ * Recent interactions table connected to Redux and FastAPI.
+ * Fetches interactions on mount and renders them.
+ * Handles edit selection and optimistic deletion.
+ *
+ * @returns {JSX.Element} The rendered component.
+ */
 
 const InteractionTable = () => {
   const dispatch = useDispatch();

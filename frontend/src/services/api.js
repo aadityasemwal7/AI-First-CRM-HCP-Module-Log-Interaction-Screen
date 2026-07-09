@@ -1,11 +1,8 @@
-/*
-  api.js
-  ------
-  Axios API layer.
-  Configures the base Axios instance and exports reusable 
-  service functions for interactions and chat.
-*/
-
+/**
+ * Axios API layer.
+ * Configures the base Axios instance and exports reusable
+ * service functions for interactions and chat.
+ */
 import axios from "axios";
 
 // 1. Configure base instance

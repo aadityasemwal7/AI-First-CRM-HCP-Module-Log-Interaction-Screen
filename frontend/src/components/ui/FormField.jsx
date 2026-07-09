@@ -1,10 +1,15 @@
-/*
-  FormField.jsx
-  -------------
-  Reusable form field wrapper.
-  Renders a label, the input element (passed as children),
-  an optional required indicator, and a validation error message.
-*/
+/**
+ * Reusable form field wrapper.
+ * Renders a label, the input element (passed as children),
+ * an optional required indicator, and a validation error message.
+ *
+ * @param {Object} props - Component props.
+ * @param {string} props.label - The label text for the field.
+ * @param {boolean} [props.required] - Whether the field is required.
+ * @param {string} [props.error] - Validation error message to display.
+ * @param {React.ReactNode} props.children - The input component to render inside the field.
+ * @returns {JSX.Element} The rendered component.
+ */
 
 const FormField = ({ label, required, error, children }) => {
   return (

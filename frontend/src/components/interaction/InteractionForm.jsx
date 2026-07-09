@@ -1,15 +1,15 @@
-/*
-  InteractionForm.jsx
-  -------------------
-  Form connected to Redux and FastAPI.
-  Handles both Creating (Log) and Updating (Edit) an interaction.
-*/
-
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logInteraction, updateInteraction, clearSelectedInteraction } from "../../redux/interactionSlice";
 import FormField from "../ui/FormField";
+
+/**
+ * Form connected to Redux and FastAPI.
+ * Handles both Creating (Log) and Updating (Edit) an interaction.
+ *
+ * @returns {JSX.Element} The rendered component.
+ */
 
 const INTERACTION_TYPES = [
   { value: "Visit", label: "In-Person Visit" },

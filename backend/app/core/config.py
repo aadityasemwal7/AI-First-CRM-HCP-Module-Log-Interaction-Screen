@@ -1,7 +1,13 @@
+"""
+This module handles application configuration and environment variables.
+"""
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
+    """
+    Pydantic settings class. Automatically loads variables from the environment or .env file.
+    """
     app_name: str = "AI First CRM"
 
     database_url: str
