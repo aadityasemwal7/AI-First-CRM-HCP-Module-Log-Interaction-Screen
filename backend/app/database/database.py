@@ -12,4 +12,4 @@ engine = create_engine(settings.database_url, echo=True)
 
 
 # session factory
-sessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

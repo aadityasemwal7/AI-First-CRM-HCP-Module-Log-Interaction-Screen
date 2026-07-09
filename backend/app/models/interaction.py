@@ -7,12 +7,6 @@ from sqlalchemy.orm import Mapped, mapped_column
 from app.database.database import Base
 
 
-class InteractionType(str, Enum):
-    VISIT = "Visit"
-    CALL = "Call"
-    EMAIL = "Email"
-    CONFERENCE = "Conference"
-
 
 class Interaction(Base):
     __tablename__ = "interactions"

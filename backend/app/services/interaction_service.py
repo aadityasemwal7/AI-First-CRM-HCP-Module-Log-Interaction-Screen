@@ -93,9 +93,9 @@ class InteractionService:
         Search interactions by HCP name.
         """
 
-    return (
-        db.query(Interaction)
-        .filter(Interaction.hcp_name.ilike(f"%{hcp_name}%"))
-        .order_by(Interaction.interaction_date.desc())
-        .all()
-    )
+        return (
+            db.query(Interaction)
+            .filter(Interaction.hcp_name.ilike(f"%{hcp_name}%"))
+            .order_by(Interaction.interaction_date.desc())
+            .all()
+        )

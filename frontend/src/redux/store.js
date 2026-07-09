@@ -2,7 +2,7 @@
   store.js
   --------
   Configures the Redux Toolkit store.
-  All feature slices are registered here as reducers.
+  Registers the interaction and chat feature slices.
 */
 
 import { configureStore } from "@reduxjs/toolkit";
@@ -14,4 +14,5 @@ export const store = configureStore({
     interaction: interactionReducer,
     chat: chatReducer,
   },
+  // Redux Toolkit automatically adds thunk middleware
 });
